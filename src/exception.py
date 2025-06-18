@@ -1,5 +1,5 @@
 import sys #exception ko control krne ke liye sys library chahiye hoti
-import logging
+from src.logger import logging
 
 def error_message_detail(error,error_detail:sys):
     _,_,exc_tb=error_detail.exc_info()#execution info..ki kis line me kiss file me exception hua h

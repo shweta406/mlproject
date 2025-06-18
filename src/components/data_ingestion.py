@@ -8,6 +8,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+
 @dataclass #decorator
 #inside a class  to define a class variable u write init btt if u use dataclass u will be able to directly define class variable
 class DataIngestionConfig: #input part h ki khan pr hm save krege train data ya test data
@@ -45,7 +48,10 @@ class DataIngestion:
 
 
             except Exception as e:
-                raise customexception()
+                raise customexception(e,sys)
 if __name__=="__main__":
     obj=DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data,test_data=obj.initiate_data_ingestion()
+
+    data_tranformation=DataTransformation()
+    data_tranformation.initiate_data_transformation(train_data,test_data)

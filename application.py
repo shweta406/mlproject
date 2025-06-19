@@ -37,6 +37,4 @@ def predict_datapoint():
         return render_template('home.html',results=results[0])
     
 if __name__=="__main__":
-    app.run(host="0.0.0.0",debug=True)
-    #python app.py than go to 127.0.0.1:5000 than /predictdata
-#to tell elasticbeanstalk instance what is tha entry point of ur application .... .ebextensions
+    app.run(host="0.0.0.0")
